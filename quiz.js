@@ -1,17 +1,19 @@
-function checkAnswer() {
-  const correctAnswer = "4";
-  const selected = document.querySelector('input[name="quiz"]:checked');
-  const feedback = document.getElementById("feedback");
-  if (selected) {
-    const userAnswer = selected.value;
-    if (userAnswer === correctAnswer) {
-      feedback.textContent = "Correct! Well done.";
-    } else {
-      feedback.textContent = "That's incorrect. Try again!";
-    }
-  } else {
-    feedback.textContent = "Please select an answer.";
-  }
+unction checkAnswer() {
+    const correctAnswer = "4";
+
+    // Find the checked radio button inside #quiz
+      const userAnswer = document.querySelector('input[name="quiz"]:checked').value;
+      const feedback = document.getElementById("feedback");
+
+     if (userAnswer === correctAnswer) {
+            feedback.textContent = "Correct! Well done.";
+            feedback.style.color = 'green';
+        } else {
+            feedback.textContent = "That's incorrect. Try again!";
+            feedback.style.color = 'red'
+        }
 }
 
-document.getElementById("submit-answer").addEventListener("click", checkAnswer);
+
+const submit = document.getElementById('submit-answer');
+submit.addEventListener('click', checkAnswer);
